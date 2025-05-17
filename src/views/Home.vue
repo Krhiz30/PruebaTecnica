@@ -12,14 +12,22 @@
           The digital encyclopedia created by Professor Oak is an invaluable
           tool to Trainers in the Pokémon world.
         </p>
-        <button class="btn btn-get-started mt-4">Get started</button>
+        <button class="btn-get-started mt-4" @click="goListPokemon">
+          Get started
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useRouter } from "vue-router";
 import imageHome from "../assets/images/img-home.png"; // Asegúrate de que la ruta sea correcta
+
+const router = useRouter();
+function goListPokemon() {
+  router.push({ name: "ListPokemon" });
+}
 </script>
 
 <style scoped>
@@ -75,6 +83,7 @@ p {
   padding: 12px 24px;
   font-size: 1.1rem;
   border-radius: 25px;
+  border: 1px solid var(--primary-color);
   background-color: var(--primary-color);
   color: var(--white-color);
 }
