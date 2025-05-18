@@ -63,7 +63,7 @@
           <div class="">
             <button
               class="btn-go-home mt-4"
-              @click="router.push({ name: 'Home' })"
+              @click="goHome"
             >
               Get back home
             </button>
@@ -163,6 +163,10 @@ const closeModal = () => {
   show.value = false; 
   pokemonSelected.value = null; 
 };
+
+const goHome = () => {
+    router.push({name:'Home'});
+}
 </script>
 
 <style scoped>
